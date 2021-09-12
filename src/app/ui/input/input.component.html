@@ -1,0 +1,31 @@
+<div class="field">
+    <label class="label" *ngIf="label != ''">{{ label }}</label>
+    <div class="control" [ngClass]="[iconRight != '' ? 'has-icons-right' : '', iconLeft != '' ? 'has-icons-left' : '' ]">
+        
+        <input 
+            class="input is-rounded style-valid"
+            type="{{ type }}"
+            placeholder="{{ placeholder }}"
+            [(ngModel)]="value"
+        >
+        
+        <ng-container *ngIf="iconRight != ''; then right;"></ng-container>
+        <ng-template #right>
+            <span class="icon is-small is-right style-valid">
+                <i class="fas {{ iconRight }}"></i>
+            </span>
+        </ng-template>
+        
+        <ng-container *ngIf="iconLeft != ''; then left;"></ng-container>
+        <ng-template #left>
+            <span class="icon is-small is-left style-valid">
+                <i class="fas {{ iconLeft }}"></i>
+            </span>
+        </ng-template>
+    </div>
+    <p class="help is-danger">
+        <!-- ? Pasarle mensaje de errores -->
+        <ng-content></ng-content>
+        <!-- ? Pasarle mensaje de errores -->
+    </p>
+</div>

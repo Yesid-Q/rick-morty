@@ -1,0 +1,17 @@
+:host{
+    & .style-valid{
+        border-color: #00d1b2;
+        color: #363636;
+    }
+
+    // clases que ingresa angular al componente, con el se puede
+    // aplicar estilo correspondientes a las etiquetas internas
+    &.ng-untouched.ng-dirty.ng-invalid,.has-error & {
+
+        & .style-valid{
+            border-color: #f14668;
+            color: #f14668;
+        }
+      
+    }
+}
