@@ -1,0 +1,21 @@
+<section class="columns is-mobile is-multiline">
+    <ng-container *ngIf="characters$ | async as characters, else loading">
+        <ng-container *ngFor="let character of characters">
+            <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+                <rm-card 
+                    [name]="character.name"
+                    [id]="character.id" 
+                    [species]="character.species"
+                    [image]="character.image"
+                    [created]="character.created"
+                    [route]="'/character'"
+                ></rm-card>
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #loading>
+        <rm-loading></rm-loading>
+    </ng-template>
+    
+</section>
