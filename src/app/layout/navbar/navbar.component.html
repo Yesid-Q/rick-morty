@@ -1,0 +1,26 @@
+<nav class="navbar is-primary">
+  <figure class="image ml-1">
+    <img src="../../../assets/img/logo.svg" height="64px" alt="" class="">
+  </figure> 
+    <div class="container is-flex is-justify-content-space-between">
+        
+        <a class="navbar-item is-size-5 is-family-monospace" routerLink="/characters" routerLinkActive="is-active">
+          Characters
+        </a>
+
+        <a class="navbar-item is-size-5 is-family-monospace" routerLink="/locations" routerLinkActive="is-active">
+          Locations
+        </a>
+      
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" [routerLink]="['/auth/login']">
+              <strong>Sign In</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</nav>
