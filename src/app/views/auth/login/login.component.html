@@ -1,0 +1,46 @@
+<form [formGroup]="formLogin" novalidate>
+    <span class="is-size-3">Welcome Back</span>
+    <rm-input
+        label="Email"
+        placeholder="Email..."
+        type="email"
+        icon-right="fa-envelope"
+        formControlName="email"
+    >
+        <span *ngIf="formLogin.controls['email'].invalid  && (formLogin.controls['email'].dirty || formLogin.controls['email'].touched)">
+            <span *ngIf="formLogin.controls['email'].errors?.required">Required email.</span>
+        </span>
+    </rm-input>
+    <rm-input
+        label="Password"
+        placeholder="Password..."
+        type="password"
+        icon-right="fa-lock"
+        formControlName="password"
+    >
+        <span *ngIf="formLogin.controls['password'].invalid  && (formLogin.controls['password'].dirty || formLogin.controls['password'].touched)">
+            <span *ngIf="formLogin.controls['password'].errors?.required">Required password.</span>
+        </span>
+    </rm-input>
+    <div class="field my-5 has-text-right">
+        <a 
+            class="is-italic has-text-weight-semibold has-text-primary"
+            [routerLink]="['/auth/register']"
+        >Sign Up</a>
+    </div>
+    <div class="field is-flex is-justify-content-space-between mt-5">
+        <rm-button
+            text="Submit"
+            color="is-success"
+            icon-right="fa-sign-in-alt"
+            type="submit"
+            [load]="loading"
+        ></rm-button>
+        <rm-button
+            text="Cancel"
+            color="is-dark"
+            icon-right="fa-window-close"
+            type="reset"
+        ></rm-button>
+    </div>
+</form>
