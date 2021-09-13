@@ -1,0 +1,8 @@
+interface LocationInterface
+{
+
+}
+
+
+
+export { LocationInterface }
