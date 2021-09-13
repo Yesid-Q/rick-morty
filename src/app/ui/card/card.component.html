@@ -1,0 +1,24 @@
+<div class="card is-full">
+  <div class="card-image" *ngIf="image != ''">
+    <figure class="image is-4by3">
+      <img [src]="image" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">{{ name | titlecase }}</p>
+        <p class="subtitle is-6">{{ name | atSign }}</p>
+      </div>
+    </div>
+    <div class="content">
+      <a href="#">Tipo</a> <a href="#">#{{ species }}</a>
+      <br>
+      <time datetime="2016-1-1">{{ created | date }}</time>
+    </div>
+  </div>
+  <footer class="card-footer" *ngIf="footer">
+    <rm-button color="is-danger" icon-left="fa-heart" text="Favorito"></rm-button>
+    <rm-button color="is-info" (click)="pushRouter()" icon-left="fa-info-circle" text="Info"></rm-button>
+  </footer>
+</div>
