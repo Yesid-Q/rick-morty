@@ -1,0 +1,45 @@
+@-webkit-keyframes spinAround {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+  
+@keyframes spinAround {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+:host{
+    &.load{
+        & .loading{
+            color: transparent!important;
+            pointer-events: none;
+        }
+        & .loading::after{
+            -webkit-animation: spinAround 500ms infinite linear;
+              animation: spinAround 500ms infinite linear;
+            border: 5px solid #ffffff;
+            border-radius: 9999px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            content: "";
+            display: block;
+            height: 1em;
+            position: relative;
+            width: 1em;
+        }
+        & .loading::after{
+            position: absolute;
+            left: calc(50% - (1em * 0.5));
+            top: calc(50% - (1em * 0.5));
+            position: absolute !important;
+        }
+    }
+}

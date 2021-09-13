@@ -1,0 +1,23 @@
+<button class="button is-full loading {{ color }}" [type]="type" >
+    <ng-container *ngIf="iconRight != ''; then right;"></ng-container>
+
+    <ng-template #right>
+        <span class="icon is-small">
+            <rm-icon [icon]="iconRight"></rm-icon>
+        </span>
+        <span *ngIf="text != ''">{{ text }}</span>
+    </ng-template>
+
+    <ng-container *ngIf="iconLeft != ''; then left;"></ng-container>
+
+    <ng-template #left>
+        <span *ngIf="text != ''">{{ text }}</span>
+        <span class="icon is-small">
+            <rm-icon [icon]="iconLeft"></rm-icon>
+        </span>
+    </ng-template>
+
+    <ng-container *ngIf="text != '' && iconLeft != '' && iconRight != ''">
+        {{ text }}
+    </ng-container>
+</button>
